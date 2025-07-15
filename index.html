@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Sunside App</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 400px;
+            width: 100%;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: #667eea;
+            border-radius: 20px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #007AFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 16px;
+            margin: 10px;
+            transition: all 0.3s ease;
+            min-width: 200px;
+        }
+        
+        .download-btn:hover {
+            background: #0056CC;
+            transform: translateY(-2px);
+        }
+        
+        .android-btn {
+            background: #34A853;
+        }
+        
+        .android-btn:hover {
+            background: #2E7D32;
+        }
+        
+        .fallback {
+            margin-top: 30px;
+            padding: 20px;
+            background: transparent;
+            border-radius: 0;
+            display: none;
+        }
+        
+        .fallback h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .fallback p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .store-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .store-badge {
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .store-badge:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+        
+        .store-badge img {
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            width: auto !important;
+            height: 60px !important;
+            object-fit: contain;
+            display: block;
+        }
+        
+        .redirecting {
+            color: #666;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+        
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #007AFF;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">S</div>
+        <h1>Scarica Sunside Club</h1>
+        <p class="subtitle">Scarica l'app per il tuo dispositivo</p>
+        
+        <div id="redirecting" class="redirecting" style="display: none;">
+            <div class="spinner"></div>
+            Reindirizzamento all'app store...
+        </div>
+        
+        <div id="fallback" class="fallback">
+            <h3>Scarica Sunside Club</h3>
+            <p>Disponibile su entrambi gli store</p>
+            <div class="store-links">
+                <a href="#" id="ios-link" class="store-badge">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" 
+                         alt="Scarica su App Store">
+                </a>
+                <a href="#" id="android-link" class="store-badge">
+                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" 
+                         alt="Scarica su Google Play">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // App Store URLs
+        const APP_STORE_URL = 'https://apps.apple.com/it/app/sunside-club/id6746264199';
+        const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.sunside.app';
+        
+        function detectDevice() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            
+            // iOS detection
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                return 'ios';
+            }
+            
+            // Android detection
+            if (/android/i.test(userAgent)) {
+                return 'android';
+            }
+            
+            return 'unknown';
+        }
+        
+        function redirectToStore(device) {
+            const redirectingElement = document.getElementById('redirecting');
+            redirectingElement.style.display = 'block';
+            
+            setTimeout(() => {
+                if (device === 'ios') {
+                    window.location.href = APP_STORE_URL;
+                } else if (device === 'android') {
+                    window.location.href = PLAY_STORE_URL;
+                }
+                
+                // Show fallback after a short delay if redirect doesn't work
+                setTimeout(() => {
+                    redirectingElement.style.display = 'none';
+                    showFallback();
+                }, 2000);
+            }, 1000);
+        }
+        
+        function showFallback() {
+            const fallbackElement = document.getElementById('fallback');
+            const iosLink = document.getElementById('ios-link');
+            const androidLink = document.getElementById('android-link');
+            
+            iosLink.href = APP_STORE_URL;
+            androidLink.href = PLAY_STORE_URL;
+            
+            fallbackElement.style.display = 'block';
+        }
+        
+        // Main logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const device = detectDevice();
+            
+            if (device === 'ios' || device === 'android') {
+                // Auto-redirect for mobile devices
+                redirectToStore(device);
+            } else {
+                // Show manual selection for desktop/unknown devices
+                showFallback();
+            }
+        });
+    </script>
+</body>
+</html>

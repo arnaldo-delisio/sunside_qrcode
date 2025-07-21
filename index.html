@@ -1,154 +1,201 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scarica Sunside Club</title>
+    <title>Sunside Club - Scarica l'App</title>
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="sunside-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        * {
             margin: 0;
-            padding: 40px 20px;
-            text-align: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* Animated background shapes */
+        .bg-shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .bg-shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            background: white;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .bg-shape:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            background: rgba(255,255,255,0.5);
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+        
+        .bg-shape:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            background: white;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(120deg); }
+            66% { transform: translateY(10px) rotate(240deg); }
         }
         
         .container {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            max-width: 400px;
-            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 48px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            max-width: 440px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .logo-section {
+            margin-bottom: 32px;
         }
         
         .logo {
-            width: 80px;
-            height: 80px;
-            background: #667eea;
-            border-radius: 20px;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 24px;
             margin: 0 auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
             overflow: hidden;
+            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+            animation: logoFloat 3s ease-in-out infinite;
+        }
+        
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
         }
         
         .logo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 20px;
+            border-radius: 24px;
         }
         
-        h1 {
-            color: #333;
-            margin-bottom: 10px;
-            font-size: 24px;
+        .brand-text {
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
         }
         
         .subtitle {
-            color: #666;
-            margin-bottom: 30px;
+            color: #64748b;
             font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 40px;
+            line-height: 1.5;
         }
         
-        .download-btn {
-            display: inline-block;
-            padding: 15px 30px;
-            background: #007AFF;
-            color: white;
-            text-decoration: none;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 16px;
-            margin: 10px;
-            transition: all 0.3s ease;
-            min-width: 200px;
-        }
-        
-        .download-btn:hover {
-            background: #0056CC;
-            transform: translateY(-2px);
-        }
-        
-        .android-btn {
-            background: #34A853;
-        }
-        
-        .android-btn:hover {
-            background: #2E7D32;
-        }
-        
-        .fallback {
-            margin-top: 30px;
-            padding: 20px;
-            background: transparent;
-            border-radius: 0;
-            display: none;
-        }
-        
-        .fallback h3 {
-            color: #333;
-            margin-bottom: 15px;
-        }
-        
-        .fallback p {
-            color: #666;
-            margin-bottom: 20px;
+        .download-section {
+            margin-bottom: 40px;
         }
         
         .store-links {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 16px;
             align-items: center;
+            margin-bottom: 32px;
         }
         
         .store-badge {
             display: inline-block;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
         }
         
         .store-badge:hover {
-            transform: translateY(-2px);
-            opacity: 0.9;
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
         }
         
         .store-badge img {
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            width: 180px !important;
-            height: 54px !important;
+            width: 200px;
+            height: 60px;
             object-fit: contain;
             display: block;
         }
         
         .redirecting {
-            color: #666;
-            font-size: 14px;
-            margin-top: 20px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            color: #667eea;
+            font-size: 16px;
+            font-weight: 500;
+            margin: 24px 0;
+            padding: 16px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 12px;
+            border: 1px solid rgba(102, 126, 234, 0.2);
         }
         
         .spinner {
-            display: inline-block;
             width: 20px;
             height: 20px;
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid #007AFF;
+            border: 2px solid rgba(102, 126, 234, 0.2);
+            border-top: 2px solid #667eea;
             border-radius: 50%;
             animation: spin 1s linear infinite;
-            margin-right: 10px;
         }
         
         @keyframes spin {
@@ -157,36 +204,43 @@
         }
         
         .social-section {
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px solid #e0e0e0;
+            padding-top: 32px;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
         }
         
         .social-title {
-            color: #333;
+            color: #334155;
             font-size: 14px;
-            margin-bottom: 15px;
             font-weight: 500;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            align-items: center;
+            gap: 16px;
         }
         
         .social-link {
-            color: #666;
-            transition: all 0.3s ease;
-            padding: 8px;
-            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            color: #64748b;
+            background: rgba(100, 116, 139, 0.1);
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
         }
         
         .social-link:hover {
-            color: #007AFF;
-            background: rgba(0, 122, 255, 0.1);
+            color: #667eea;
+            background: rgba(102, 126, 234, 0.15);
             transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(102, 126, 234, 0.2);
         }
         
         .social-icon {
@@ -194,35 +248,115 @@
             height: 20px;
             fill: currentColor;
         }
+        
+        .features {
+            margin: 32px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+        
+        .feature {
+            padding: 16px;
+            background: rgba(102, 126, 234, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(102, 126, 234, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .feature-text {
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 500;
+        }
+        
+        .fallback {
+            display: none;
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 480px) {
+            .container {
+                padding: 32px 24px;
+                margin: 20px;
+            }
+            
+            .brand-text {
+                font-size: 24px;
+            }
+            
+            .store-badge img {
+                width: 180px;
+                height: 54px;
+            }
+            
+            .social-links {
+                gap: 12px;
+            }
+            
+            .social-link {
+                width: 40px;
+                height: 40px;
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="bg-shape"></div>
+    <div class="bg-shape"></div>
+    <div class="bg-shape"></div>
+    
     <div class="container">
-        <div class="logo">
-            <img src="sunside-logo.png" alt="Sunside Club Logo">
+        <div class="logo-section">
+            <div class="logo">
+                <img src="sunside-logo.png" alt="Sunside Club Logo">
+            </div>
+            <h1 class="brand-text">SUNSIDE CLUB</h1>
+            <p class="subtitle">La tua community di creativi sempre con te</p>
         </div>
-        <h1>Scarica Sunside Club</h1>
-        <p class="subtitle">Scarica l'app per il tuo dispositivo</p>
         
-        <div id="redirecting" class="redirecting" style="display: none;">
+        <div id="redirecting" class="redirecting">
             <div class="spinner"></div>
-            Reindirizzamento all'app store...
+            <span>Ti stiamo reindirizzando...</span>
         </div>
         
         <div id="fallback" class="fallback">
-            <h3>Scarica Sunside Club</h3>
-            <p>Disponibile su entrambi gli store</p>
-            <div class="store-links">
-                <a href="#" id="ios-link" class="store-badge">
-                    <img src="images/marketing/app-store.svg" 
-                         alt="Scarica su App Store" 
-                         style="width: 180px; height: 54px; object-fit: contain;">
-                </a>
-                <a href="#" id="android-link" class="store-badge">
-                    <img src="images/marketing/play-store.png" 
-                         alt="Scarica su Google Play" 
-                         style="width: 180px; height: 54px; object-fit: contain;">
-                </a>
+            <div class="download-section">
+                <div class="features">
+                    <div class="feature">
+                        <span class="feature-icon">📱</span>
+                        <div class="feature-text">App Nativa</div>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">⚡</span>
+                        <div class="feature-text">Veloce</div>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">🔔</span>
+                        <div class="feature-text">Notifiche</div>
+                    </div>
+                </div>
+                
+                <div class="store-links">
+                    <a href="#" id="ios-link" class="store-badge">
+                        <img src="images/marketing/app-store.svg" alt="Scarica su App Store">
+                    </a>
+                    <a href="#" id="android-link" class="store-badge">
+                        <img src="images/marketing/play-store.png" alt="Scarica su Google Play">
+                    </a>
+                </div>
             </div>
         </div>
         
@@ -280,12 +414,10 @@
         function detectDevice() {
             const userAgent = navigator.userAgent || navigator.vendor || window.opera;
             
-            // iOS detection
             if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
                 return 'ios';
             }
             
-            // Android detection
             if (/android/i.test(userAgent)) {
                 return 'android';
             }
@@ -295,7 +427,7 @@
         
         function redirectToStore(device) {
             const redirectingElement = document.getElementById('redirecting');
-            redirectingElement.style.display = 'block';
+            redirectingElement.style.display = 'flex';
             
             setTimeout(() => {
                 if (device === 'ios') {
@@ -304,12 +436,11 @@
                     window.location.href = PLAY_STORE_URL;
                 }
                 
-                // Show fallback after a short delay if redirect doesn't work
                 setTimeout(() => {
                     redirectingElement.style.display = 'none';
                     showFallback();
-                }, 2000);
-            }, 1000);
+                }, 3000);
+            }, 1500);
         }
         
         function showFallback() {
@@ -323,15 +454,12 @@
             fallbackElement.style.display = 'block';
         }
         
-        // Main logic
         document.addEventListener('DOMContentLoaded', function() {
             const device = detectDevice();
             
             if (device === 'ios' || device === 'android') {
-                // Auto-redirect for mobile devices
                 redirectToStore(device);
             } else {
-                // Show manual selection for desktop/unknown devices
                 showFallback();
             }
         });

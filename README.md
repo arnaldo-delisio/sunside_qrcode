@@ -159,5 +159,3 @@ const detectDevice = () => {
 ---
 
 *Sunside Club - Democratizing movie production through innovative technology and deep industry expertise*
-
-[![Download on App Store](https://developer.apple.com/app-store/marketing/guidelines/images/badge-example-preferred.png)](https://apps.apple.com/it/app/sunside-club/id6746264199)

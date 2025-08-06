@@ -10,8 +10,6 @@ Sunside transforms manual, spreadsheet-based casting processes into an efficient
 - **📱 For Providers**: [app.sunside.club](https://app.sunside.club) - Register as talent/resource provider on the mobile app
 - **🎬 For Production Teams**: [client.sunside.club](https://client.sunside.club) - Search providers & manage projects
 
-> This landing age works as QR code redirect functionality for mobile app download
-
 ---
 
 ## 🏗️ Complete Sunside Ecosystem
@@ -62,6 +60,8 @@ Sunside operates as a **5-component integrated platform** serving the Italian en
 ---
 
 ## 🎯 This Repository: Technical Showcase
+
+> This landing page works as QR code redirect functionality for mobile app download
 
 **Smart QR Code Landing Page** optimized for instant mobile app conversion:
 

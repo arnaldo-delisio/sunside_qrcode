@@ -1,18 +1,15 @@
 # 🎬 Sunside Club
 ## *"The Democratic Movie Production"*
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-qr.sunside.club-purple?style=for-the-badge)](https://qr.sunside.club)
-[![Platform Status](https://img.shields.io/badge/Status-Production_Ready-green?style=for-the-badge)](https://app.sunside.club)
-[![Version](https://img.shields.io/badge/Mobile_App-v1.0.34-blue?style=for-the-badge)](https://app.sunside.club)
-
 > **Comprehensive production services platform digitalizing Italian film, television, and commercial production logistics**
 
 Sunside transforms manual, spreadsheet-based casting processes into an efficient digital ecosystem connecting **1500+ active providers** across Italy with production companies through innovative dual-workflow systems.
 
-### 🚀 Quick Access
-- **🌐 Main Platform**: [sunside.club](https://sunside.club) - Official website
-- **📱 Download App**: [app.sunside.club](https://app.sunside.club) - Mobile app & registration
-- **🎯 This Repository**: QR code landing page for seamless app downloads
+### 🚀 Platform Access
+- **🌐 Main Website**: [sunside.club](https://sunside.club) - Official platform information
+- **📱 For Providers**: [app.sunside.club](https://app.sunside.club) - Register as talent/resource provider  
+- **🎬 For Production Teams**: [client.sunside.club](https://client.sunside.club) - Search providers & manage projects
+- **📋 This Landing Page**: [GitHub Pages Demo](https://arnaldo-delisio.github.io/sunside_qrcode) - QR code redirect functionality
 
 ---
 
@@ -52,7 +49,7 @@ Sunside operates as a **5-component integrated platform** serving the Italian en
 ### Production Metrics
 - **🎯 Active Providers**: 1500+ verified professionals across Italy
 - **📱 Mobile App**: Version 1.0.34 in active production
-- **🎬 Active Project**: Matador (August-September 2024)
+- **🎬 Active Project**: Matador (September-October 2025)
 - **🏢 Resource Categories**: Talent, vehicles, locations, animals, equipment
 
 ### Technical Architecture
@@ -118,8 +115,8 @@ const detectDevice = () => {
 ## 🌟 Professional Experience & Contact
 
 ### Platform Access
-- **🎬 Try the Platform**: [client.sunside.club](https://client.sunside.club) - Production dashboard
-- **📱 Download Mobile App**: [app.sunside.club](https://app.sunside.club) - Provider registration
+- **🎬 Production Teams**: [client.sunside.club](https://client.sunside.club) - Search providers & manage projects
+- **📱 Providers**: [app.sunside.club](https://app.sunside.club) - Register as talent/resource provider
 - **🌐 Learn More**: [sunside.club](https://sunside.club) - Complete platform information
 
 ### Developer
@@ -132,7 +129,7 @@ const detectDevice = () => {
 
 ## 🚀 Project Vision & Current Status
 
-### Current Focus: Matador Project (August-September 2024)
+### Current Focus: Matador Project (September-October 2025)
 - **Scale**: Multi-production casting coordination
 - **Process**: Digital profile review replacing traditional physical casting calls
 - **Innovation**: "Basta che ti sei registrato" - registration is sufficient for consideration
@@ -152,7 +149,7 @@ const detectDevice = () => {
 
 ## 📞 Get Involved
 
-**For Industry Professionals**: Experience the platform at [app.sunside.club](https://app.sunside.club)
+**For Providers**: Register at [app.sunside.club](https://app.sunside.club) | **For Production Teams**: Search at [client.sunside.club](https://client.sunside.club)
 
 **For Technical Collaboration**: This repository showcases just one component of a comprehensive production platform. Interested in discussing the complete technical architecture or potential collaboration opportunities?
 

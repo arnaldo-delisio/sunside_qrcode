@@ -7,9 +7,10 @@ Sunside transforms manual, spreadsheet-based casting processes into an efficient
 
 ### 🚀 Platform Access
 - **🌐 Main Website**: [sunside.club](https://sunside.club) - Official platform information
-- **📱 For Providers**: [app.sunside.club](https://app.sunside.club) - Register as talent/resource provider  
+- **📱 For Providers**: [app.sunside.club](https://app.sunside.club) - Register as talent/resource provider on the mobile app
 - **🎬 For Production Teams**: [client.sunside.club](https://client.sunside.club) - Search providers & manage projects
-- **📋 This Landing Page**: [GitHub Pages Demo](https://arnaldo-delisio.github.io/sunside_qrcode) - QR code redirect functionality
+
+> This landing age works as QR code redirect functionality for mobile app download
 
 ---
 
